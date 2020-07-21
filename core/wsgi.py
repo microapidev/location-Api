@@ -1,5 +1,5 @@
 """
-WSGI config for location_microapi project.
+WSGI config for core project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -8,9 +8,11 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 """
 
 import os
-
 from django.core.wsgi import get_wsgi_application
+from dotenv import load_dotenv
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'location_microapi.settings')
-
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 application = get_wsgi_application()
+
+project_folder = os.path.expanduser('~/core')
+load_dotenv(os.path.join(project_folder, '.env'))
