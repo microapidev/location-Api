@@ -3,8 +3,14 @@ Django==3.0.8
 django-autoslug-iplweb==1.9.4.dev0
 django-cities==0.6
 django-model-utils==4.0.0
+django-heroku==0.3.1
 djangorestframework==3.11.0
+GDAL==3.0.4
+idna==2.9
+MarkupSafe==1.1.0
 progressbar2==3.51.4
+psycopg2==2.8.5
+python-dateutil==2.7.5
 python-dotenv==0.14.0
 python-utils==2.4.0
 pytz==2020.1
@@ -14,3 +20,4 @@ swapper==1.1.2.post1
 tqdm==4.48.0
 Unidecode==1.1.1
 setuptools~=45.2.0
+whitenoise==5.1.0
