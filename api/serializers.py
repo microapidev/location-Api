@@ -1,37 +1,39 @@
 from rest_framework import serializers
-from cities.models import Country, City, Continent, District, Region, Subregion, AlternativeName
+from cities.models import City, Continent, Country, District, Region, Subregion
+
 
 class ContinentSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name',)
         model = Continent
+        fields = ['id', 'name', 'code']
+
 
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name', 'continent')
         model = Country
+        fields = ('id', 'name', 'capital', 'code3', 'population', 'area', 'currency', 'currency_name', 'phone',
+                  'continent')
 
-class CitySerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = ('name', 'country','Region', 'subregion')
-        model = City
 
 class RegionSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name', 'country', 'code')
         model = Region
+        fields = ('id', 'name', 'code', 'country')
 
-class SubregionSerializer(serializers.ModelSerializer):
+
+class SubRegionSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name', 'code', 'region')
         model = Subregion
+        fields = ('id', 'name', 'code', 'region')
+
+
+class CitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
+        fields = ('id', 'name', 'population', 'elevation', 'timezone', 'country', 'region', 'subregion')
+
 
 class DistrictSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('name', 'city')
         model = District
-
-class AlternativeNameSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = ('name', 'country')
-        model = AlternativeName
+        fields = ('id', 'name', 'population', 'city')
