@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for core project.
 
@@ -125,3 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+django_heroku.settings(locals())
