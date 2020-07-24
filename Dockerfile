@@ -14,6 +14,8 @@ COPY . /code/
 
 COPY requirements.txt /code
 
+COPY .env.example /code/.env
+
 WORKDIR /code
 
 RUN pip install -r requirements.txt
